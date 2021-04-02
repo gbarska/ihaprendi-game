@@ -1,0 +1,147 @@
+:host{
+    width: 100vw;
+    display: block;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 150px);
+    gap: 16px;
+
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, 150px);
+    }
+}
+
+.animated-easter{
+    position: absolute;
+    bottom: 70px;
+    right: 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+}
+.shake{
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+}
+.sun{
+    position: absolute;
+    right: 30px;
+    top: 110px;
+    z-index: 50;
+}
+
+.animated-phill{
+position: absolute;
+top: 400px;
+left: 10px;
+z-index: 2;
+display: flex;
+flex-direction: row;
+}
+
+.animated-airplane{
+position: absolute;
+top: 50px;
+left: 1px;
+z-index: 100;
+
+width: 100%;
+height: 200px;
+overflow: hidden;
+}
+
+.animated-airplane img{
+-moz-transform: translateX(100%);
+-webkit-transform: translateX(100%);
+transform: translateX(100%);
+-moz-animation: scroll-right 2s linear infinite;
+-webkit-animation: scroll-right 2s linear infinite;
+animation: scroll-right 20s linear infinite;
+}
+
+@-moz-keyframes scroll-right {
+    0% {
+        -moz-transform: translateX(-100%);
+    }
+    100% {
+        -moz-transform: translateX(300%);
+    }
+}
+
+@-webkit-keyframes scroll-right {
+    0% {
+        -webkit-transform: translateX(-100%);
+    }
+    100% {
+        -webkit-transform: translateX(300%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+    100% {
+        -moz-transform: translateX(300%);
+        -webkit-transform: translateX(300%);
+        transform: translateX(300%);
+    }
+}
+
+
+@-moz-keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-300%);
+    }
+}
+
+@-webkit-keyframes scroll-left {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(-300%);
+    }
+}
+
+@keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-300%);
+        -webkit-transform: translateX(-300%);
+        transform: translateX(-300%);
+    }
+}
+
+
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
