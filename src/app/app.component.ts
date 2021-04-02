@@ -40,6 +40,8 @@ export class AppComponent implements OnInit {
   flippedCards: CardData[] = [];
 
   matchedCount = 0;
+  audio = new Audio();
+
 
   shuffleArray(anArray: any[]): any[] {
     return anArray.map(a => [Math.random(), a])
@@ -62,10 +64,9 @@ export class AppComponent implements OnInit {
   }
 
   playAudio(){
-    let audio = new Audio();
-    audio.src = "../../../assets/mario_song.mp3";
-    audio.load();
-    audio.play();
+    this.audio.src = "../../../assets/mario_song.mp3";
+    this.audio.load();
+    this.audio.play();
   }
 
   public get baloon() {
@@ -146,6 +147,8 @@ export class AppComponent implements OnInit {
     this.gameState = true;
     this.matchedCount = 0;
     this.setupCards();
+    this.audio.pause();
+    this.audio.play();
   }
 
 

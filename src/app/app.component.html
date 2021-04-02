@@ -1,4 +1,3 @@
-
 <div *ngIf="gameState">
   <mat-toolbar color="primary" class="text-center">
     Ih,Aprendi!
@@ -12,18 +11,18 @@
     <img src="./assets/sun.png" alt="" style="width: 200px;">
    </div>
    
-   <div style="margin-top: 10rem"> 
+   <div class="animated-phill" style="flex: auto;">
+    <img src="./assets/phill.png" alt="" style="width: 150px;">
+    <img [src]="'./assets/'+ baloon" alt="" style="width: 120px;  transform: translateY(-50px);">
+  </div>
+  <div class="animated-easter" [ngClass]="{'shake': shouldShake}">
+    <img src="./assets/rabbit.png" alt="" style="width: 350px;">
+  </div>
+
+   <div style="margin-top: 6rem; z-index: 23; position: relative;"> 
      <div class="grid p-16">
        <app-game-card *ngFor="let c of cards; let idx=index" [data]="c" (cardClicked)="cardClicked(idx)">
        </app-game-card>
-     </div>
-
-     <div class="animated-phill" style="flex: auto;">
-       <img src="./assets/phill.png" alt="" style="width: 150px;">
-       <img [src]="'./assets/'+ baloon" alt="" style="width: 120px;  transform: translateY(-50px);">
-     </div>
-     <div class="animated-easter" [ngClass]="{'shake': shouldShake}">
-       <img src="./assets/rabbit.png" alt="" style="width: 350px;">
      </div>
    </div>
    <div style="position: absolute; bottom: 40px; left: 40px; z-index: 55">
